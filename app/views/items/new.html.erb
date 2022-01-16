@@ -1,0 +1,26 @@
+<div class=“new_form”>
+    <div class=“col-md-6 col-md-offset-3”>
+        <%= form_with(model: @item, local: true) do |f| %>
+
+            <%= f.label :name, '欲しいもの' %>
+            <%= f.text_field :name %>       
+
+            <%= f.label :price, '金額(半角で入れてね！)' %>
+            <%= f.text_field :price %>
+
+            <div class=“buy_month”>
+                <%= f.label :買うタイミング %>
+                <%= f.date_select :buy_month, {
+                    use_month_numbers: true,
+                    start_year: (Time.now.year),
+                    end_year: 2030,
+                    date_separator: '/'
+                } %>
+            </div>
+            
+            <%= f.submit "欲しい！", class: "btn btn-primary" %>
+            <%= link_to "欲しいもの一覧", '/items/index' %>
+    
+        <% end %>
+    </div>
+</div>

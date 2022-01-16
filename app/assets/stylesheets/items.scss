@@ -1,0 +1,31 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* 全体 */ 
+.BUTSUYOKU {
+    color: #000;
+    font-family: arial black;
+    font-size: 300%;
+}
+
+.YOKUBO {
+    font-size: 20px;
+    font-family: arial black;
+}
+
+.YOKUBO2 {
+    font-size: 20px;
+    font-family: arial black;
+}
+
+/* new_forms */ 
+
+input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    margin-bottom: 15px;
+}
+
+input {
+    height: auto !important;
+}
+
