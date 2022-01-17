@@ -11,9 +11,14 @@
   </head>
 
   <body>
-    <%= link_to "BUTSUYOKU", '/', id: "BUTSUYOKU", class: "BUTSUYOKU" %>
-    <p class=“YOKUBO”>欲望の塊め！</p>
-    <p class=“YOKUBO2”>欲しいものを入れていくがよい！</p>
+  <header class="nav navbar">
+      <%= link_to "BUTSUYOKU", '/', id: "BUTSUYOKU", class: "BUTSUYOKU" %>
+      <p class=“YOKUBO”>欲望の塊め！</p>
+      <p class=“YOKUBO2”>欲しいものを入れていくがよい！</p>
+  </header>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
 </body>
     <%= yield %>
   </body>

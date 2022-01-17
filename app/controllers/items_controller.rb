@@ -15,8 +15,10 @@ class ItemsController < ApplicationController
   def create 
     @item = Item.new(item_params)
     if @item.save
+      flash[:success] = "欲しがりさんめ！"
       redirect_to '/items/index'
     else
+      flash[:danger] = "何ゆーてますの？"
       render 'new'
     end
   end

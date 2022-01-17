@@ -3,21 +3,28 @@
 
 /* 全体 */ 
 .BUTSUYOKU {
-    color: #000;
+    color: black;
     font-family: arial black;
     font-size: 300%;
 }
 
 .YOKUBO {
+    color: black;
     font-size: 20px;
     font-family: arial black;
 }
 
 .YOKUBO2 {
+    color: white;
     font-size: 20px;
     font-family: arial black;
 }
 
+.header {
+    li {
+        list-style: none;
+    }
+}
 /* new_forms */ 
 
 input, textarea, select, .uneditable-input {
@@ -29,3 +36,9 @@ input {
     height: auto !important;
 }
 
+
+/* index */ 
+
+li{
+    list-style: none;
+}

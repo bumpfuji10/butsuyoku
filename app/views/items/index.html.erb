@@ -1,8 +1,8 @@
-<ul class = “items” >
+<ul>
     <% @items.each do |item| %>
         <li>欲しいもの : <%= item.name %></li>
             金額 : <%= item.price %>円
-            <%= item.buy_month %>に買います
+            <%= item.buy_month %>に買います  
             <%= link_to "削除", '/items/' + item.id.to_s, method: :delete %>
     <% end %>
 </ul>
