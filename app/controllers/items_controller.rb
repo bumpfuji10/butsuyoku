@@ -30,19 +30,18 @@ class ItemsController < ApplicationController
     end
 
   def search_date
-    if !@item.nil?
-      @search_date = Item.find_by(params[:id]).buy_month.to_s
-    end
+      @search_dates = Item.find_by(params[:id]).buy_month.to_s
   end
 
+  def month_of_buy
+    @month_of_buy = Item.where(created_at: @seach_date.in_time_zone.all_year)
+  end
 
-  helper_method :search_date
+  helper_method :search_date, :month_of_buy
 
   private
 
   def item_params
     params.require(:item).permit(:name, :price, :buy_month)
   end
-
-
 end
