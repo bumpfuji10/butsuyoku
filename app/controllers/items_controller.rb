@@ -29,10 +29,20 @@ class ItemsController < ApplicationController
       redirect_to '/items/index'
     end
 
+  def search_date
+    if !@item.nil?
+      @search_date = Item.find_by(params[:id]).buy_month.to_s
+    end
+  end
+
+
+  helper_method :search_date
+
   private
 
   def item_params
     params.require(:item).permit(:name, :price, :buy_month)
   end
+
 
 end
