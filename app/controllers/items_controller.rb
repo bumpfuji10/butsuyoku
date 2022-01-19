@@ -33,14 +33,13 @@ class ItemsController < ApplicationController
       @search_date = Item.find_by(params[:id]).buy_month.strftime('%Y年%m月%d日')
     end
 
-    def part_month
-      month = Item.find_by(params[:id]).buy_month
-      @part_month = Item.where(created_at: month.beginning_of_month..month.end_of_month)
-    end
-      
+    # def part_month
+      # @item = Item.find_by(name: "f")
+      # @search_date = item.buy_month.to_s
+      # Item.where(created_at: @search_date.in_time.zone.all_month)
+    # end
     
-    helper_method :search_date, :part_month
-
+    helper_method :search_date
     private
 
       def item_params
