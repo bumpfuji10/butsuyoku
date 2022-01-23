@@ -12,9 +12,13 @@
     <p><%= link_to "まだ何か欲しいの？", '/' %><p>
 </div>  
 
-<%= search_date %>
+
 <%= "1月に買うものは..." %>
     <% month.each do |month| %>
         <%= "#{month.name}" %>
+    <% end %>
+<%= "1月に買うものの合計金額は..." %>
+    <% month.each do |month| %>
+        <%= "#{month.price}" %>
     <% end %>
 

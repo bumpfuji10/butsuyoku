@@ -30,18 +30,11 @@ class ItemsController < ApplicationController
     end
 
     def search_date
-      @item = Item.find_by(params[:id])
-      if !@item.nil?
-      @search_date = @item.buy_month
-      end
+      search_date = Time.new(2022, 1, 1)
     end
 
-
-
     def month
-      if !@search_date.nil?
-        @months = Item.where(created_at: @search_date.beginning_of_month..@search_date.end_of_month)
-      end
+      month = Item.where(buy_month: search_date.beginning_of_month..search_date.end_of_month)
     end
     
     helper_method :search_date, :month
