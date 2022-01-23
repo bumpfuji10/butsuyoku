@@ -13,7 +13,8 @@
 </div>  
 
 <%= search_date %>
-<% month.each do |month| %>
-    <%= "1月に買うものは#{month.name}です" %>
-<% end %>
+<%= "1月に買うものは..." %>
+    <% month.each do |month| %>
+        <%= "#{month.name}" %>
+    <% end %>
 

@@ -36,6 +36,8 @@ class ItemsController < ApplicationController
       end
     end
 
+
+
     def month
       if !@search_date.nil?
         @months = Item.where(created_at: @search_date.beginning_of_month..@search_date.end_of_month)
