@@ -14,13 +14,10 @@
 
 
 <%= "1月に買うものは..." %>
-    <% if part_month_item.nil? %>
-        <%= puts "ないよ" %>
-    <% else %>
-        <% part_month_item.each do |month| %>
-            <%= "#{month.name}" %>
-        <% end %>
+    <% part_month_item.each do |month| %>
+        <%= "#{month.name}だよ。" %>
     <% end %>
+
 
 <br>
 <%= "1月に買うものの合計金額は..." %><%= part_month_item_sum %>円だよ。貴様に買えるか？
