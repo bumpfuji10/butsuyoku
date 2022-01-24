@@ -33,11 +33,15 @@ class ItemsController < ApplicationController
       search_date = Time.new(2022, 1, 1)
     end
 
-    def month
-      month = Item.where(buy_month: search_date.beginning_of_month..search_date.end_of_month)
+    def part_month_item
+      part_month_item = Item.where(buy_month: search_date.beginning_of_month..search_date.end_of_month)
+    end
+
+    def part_month_item_sum
+      part_month_item_sum = part_month_item.all.sum(:price)
     end
     
-    helper_method :search_date, :month
+    helper_method :search_date, :part_month_item, :part_month_item_sum
     private
 
       def item_params

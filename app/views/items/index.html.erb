@@ -14,12 +14,14 @@
 
 
 <%= "1月に買うものは..." %>
-    <% month.each do |month| %>
-        <%= "#{month.name}" %>
-    <% end %>
-<%= "1月に買うものの合計金額は..." %>
-    <% month.each do |month| %>
-        <%= "#{month.price}" %>
+    <% if part_month_item.nil? %>
+        <%= puts "ないよ" %>
+    <% else %>
+        <% part_month_item.each do |month| %>
+            <%= "#{month.name}" %>
+        <% end %>
     <% end %>
 
-git branch 12
+<br>
+<%= "1月に買うものの合計金額は..." %><%= part_month_item_sum %>円だよ。貴様に買えるか？
+
