@@ -1,24 +1,32 @@
 <ul>
     <% @items.each do |item| %>
+    <br>------------------------------------------------------
         <li>欲しいもの : <%= item.name %></li>
-            金額 : <%= item.price %>円
-            <%= item.buy_month %>に買います  
-            <%= link_to "削除", '/items/' + item.id.to_s, method: :delete %>
+            金額 : <%= item.price.to_s(:delimited) %>円
+            <%= item.buy_month.strftime("%Y年%m月%d日") %>に買うぜ！
+            <br>
+            <%= link_to "我慢する", '/items/' + item.id.to_s, method: :delete %> /
+            <%= link_to "買っちまったよ...", '#' %>
     <% end %>
+    <br>------------------------------------------------------
 </ul>
 
 <div class=“index”>
-    <p>君の物欲合計金額は...<%= @ItemsAllSum %>円</p>
+    <p>君の物欲合計金額は...<%= @ItemsAllSum.to_s(:delimited) %>円</p>
     <p><%= link_to "まだ何か欲しいの？", '/' %><p>
 </div>  
 
 
-<%= "1月に買うものは..." %>
+<%= "1月に買うものは" %>
     <% part_month_item.each do |month| %>
         <%= "#{month.name}だよ。" %>
     <% end %>
 
 
 <br>
-<%= "1月に買うものの合計金額は..." %><%= part_month_item_sum %>円だよ。貴様に買えるか？
+<%= "1月に買うものの合計金額は " %><%= part_month_item_sum.to_s(:delimited) %>円だよ。貴様に買えるか？
+
+<br>
+<br>
+<%= "当月購入済みのもの" %>
 
