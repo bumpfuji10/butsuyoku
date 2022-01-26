@@ -29,8 +29,6 @@ class ItemsController < ApplicationController
       redirect_to '/items/index'
     end
 
-    # 1月
-
     def search_date
       search_date = Time.new(2022, 1, 1)
     end
