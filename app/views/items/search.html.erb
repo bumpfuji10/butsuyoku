@@ -1,0 +1,21 @@
+<h1>検索結果</h1>
+<table>
+    <thead>
+        <tr>
+            <th>名前</th>
+            <th>金額</th>
+            <th>買うタイミング</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @results.each do |item| %>
+            <tr>
+                <td><%= item.name %></td>
+                <td><%= item.price %></td>
+                <td><%= item.buy_month %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= link_to '戻る', '/' %>

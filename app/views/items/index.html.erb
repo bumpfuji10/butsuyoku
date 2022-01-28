@@ -6,10 +6,11 @@
             <%= item.buy_month.strftime("%Y年%m月%d日") %>に買うぜ！
             <br>
             <%= link_to "我慢する", '/items/' + item.id.to_s, method: :delete %> /
-            <%= link_to "買っちまったよ...", '/items/index' %>
+            <%= link_to "買っちまったよ...", index_path %>
     <% end %>
     <br>------------------------------------------------------
 </ul>
+
 
 <div class=“index”>
     <p>君の物欲合計金額は...<%= @ItemsAllSum.to_s(:delimited) %>円</p>
@@ -43,5 +44,13 @@
 
 <br>
 <br>
-<%= "当月購入済みのもの" %>
 
+<%= search_form_for @items, url: '/items/' + item.id.to_s do |f| %>
+<%= f.date_field :buy_month_gteq, # より大きいと指定している
+                    include_blank: true,
+                    class: 'form-control' %>〜
+<%= f.date_field :buy_month_lteq_end_of_day, 
+                    include_blank: true,
+                    class: 'form-control' %>
+<%= f.submit "検索" %>
+<% end %>

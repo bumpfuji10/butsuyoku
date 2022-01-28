@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.save
       flash[:success] = "欲しがりさんめ！"
-      redirect_to '/items/index'
+      redirect_to index_path
     else
       flash[:danger] = "何ゆーてますの？"
       render 'new'
@@ -26,8 +26,16 @@ class ItemsController < ApplicationController
     def destroy
       @item = Item.find(params[:id])
       @item.destroy
-      redirect_to '/items/index'
+      redirect_to index_path
     end
+
+    def search
+      @search = Item.ransack(params[:q])
+      @items = @search.result(distinct: true).includes(%i[item]).order(buy_month: :desc)
+    end
+
+
+    # ヘルパー
 
     def search_date
       search_date = Time.new(2022, 1, 1)
@@ -42,9 +50,19 @@ class ItemsController < ApplicationController
     end
 
     helper_method :search_date, :part_month_item, :part_month_item_sum
+    
     private
+
+    def set_q
+      @q = Item.ransack(params[:q])
+    end
+
+    def set_item
+      @item = Item.find(params[:id])
+    end
 
       def item_params
         params.require(:item).permit(:name, :price, :buy_month)
       end
-    end
+
+end
