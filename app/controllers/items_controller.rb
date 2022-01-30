@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :search
+
   def new
     @item = Item.new
   end
@@ -30,10 +32,15 @@ class ItemsController < ApplicationController
     end
 
     def search
-      @search = Item.ransack(params[:q])
-      @items = @search.result(distinct: true).includes(%i[item]).order(buy_month: :desc)
+      @q = Item.ransack(params[:q])
+      @items = @q.result(distinct: true).order(buy_month: :desc)
+      if params[:q]
+        flash[:danger] = "年月日を入れてください"
+        render 
+      else
+        @ItemsAllSumOnSearch = @items.all.sum(:price)
+      end
     end
-
 
     # ヘルパー
 
@@ -52,14 +59,6 @@ class ItemsController < ApplicationController
     helper_method :search_date, :part_month_item, :part_month_item_sum
     
     private
-
-    def set_q
-      @q = Item.ransack(params[:q])
-    end
-
-    def set_item
-      @item = Item.find(params[:id])
-    end
 
       def item_params
         params.require(:item).permit(:name, :price, :buy_month)

@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   get '/index' => 'items#index'
   post 'items' => 'items#create'
   delete 'items/:id' => 'items#destroy'
-  get 'search/:id' => 'items#search'
+  resources :items do
+    collection do 
+      get 'search'
+    end
+  end
 end
