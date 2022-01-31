@@ -1,3 +1,11 @@
-<header class="center nav navbar">
-    <%= link_to "BUTSUYOKU", '/', id: "BUTSUYOKU", class: "BUTSUYOKU" %>
+<header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <%= link_to "BUTSUYOKU", '/', id: "BUTSUYOKU", class: "BUTSUYOKU" %>
+        <nav>  
+            <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to "BUTSUYOKU一覧", index_path %></li>
+                <li><%= link_to "BUTSUYOKUとは？", about_path %></li>
+            </ul>
+        </nav>
+    </div>
 </header>
