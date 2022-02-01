@@ -61,6 +61,7 @@ p {
 /* header */ 
 
 #BUTSUYOKU {
+    font-family: Arial Black;
     float: left;
     margin-right: 10px;
     font-size: 1.7em;
@@ -97,15 +98,19 @@ input {
 
 /* index */ 
 .items {
+    justify-content: center;
+    text-align: center;
     list-style: none;
-    padding: 0;
-    li {
-        padding: 10px 0;
+    .buys {
         border-top: 1px solid #e8e8e8;
+    }
+    li {
+        padding: 5px;
     }
 }
 
 .sumprice {
+    text-align: center;
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
 }
@@ -115,12 +120,22 @@ span {
     border-bottom: 1px solid black;
 }
 
+.input_search {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    @include box_sizing;
+    padding: 0;
+}
+
 /* search */ 
 .search {
+    text-align: center;
+    justify-content: center;
     li {
-        padding: 10px 0;
-        border-top: 1px solid #e8e8e8;
+        border-top:1px solid #e8e8e8;
         list-style: none;
+        padding: 10px;
     }
 }
 /* その他（デバッグ等） */
@@ -128,6 +143,6 @@ span {
     clear: both;
     float: left;
     width: 100%;
-    margin-top: 45px;
     @include box-sizing;
 }
+

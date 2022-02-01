@@ -1,22 +1,23 @@
 <h1>期間検索結果だよ</h1>
-<ul class="search">
+<div class="search">
     <% @items.each do |item| %>
         <li>欲しいもの : <%= item.name %>
         <br>金額　: <%= item.price.to_s(:delimited) %>円
         <br><%= item.buy_month.strftime("%Y年%m月%d日") %>に買うぜ！
     <% end %>
-</ul>
 
-<p>この期間に買うものの金額合計は…<%= @ItemsAllSumOnSearch.to_s(:delimited) %>円だよ。</p>
-<% if @ItemsAllSumOnSearch.to_s(:delimited) == "0" %>
-    <%= "もしかして節約してんの？" %>
-<% elsif @ItemsAllSumOnSearch < 10000 %>
-    <%= "貧困層は大変だねぇ（笑）" %>
-<% elsif @ItemsAllSumOnSearch < 20000 %>
-    <%= "今月の家計簿ちゃんと見た？" %>
-<% elsif @ItemsAllSumOnSearch < 30000 %>
-    <br><%= "そういえば君の財布が「もう限界」って相談しにきたけど、大丈夫？" %>
-<% else %>
-    <%= "貴様に買えるのか？" %>
-<% end %>
-<br><%= link_to '戻る', index_path %>
+
+    <p>この期間に買うものの金額合計は…<%= @ItemsAllSumOnSearch.to_s(:delimited) %>円だよ。</p>
+    <% if @ItemsAllSumOnSearch.to_s(:delimited) == "0" %>
+        <%= "もしかして節約してんの？" %>
+    <% elsif @ItemsAllSumOnSearch < 10000 %>
+        <%= "貧困層は大変だねぇ（笑）" %>
+    <% elsif @ItemsAllSumOnSearch < 20000 %>
+        <%= "今月の家計簿ちゃんと見た？" %>
+    <% elsif @ItemsAllSumOnSearch < 30000 %>
+        <br><%= "そういえば君の財布が「もう限界」って相談しにきたけど、大丈夫？" %>
+    <% else %>
+        <%= "貴様に買えるのか？" %>
+    <% end %>
+    <br><%= link_to '戻る', index_path %>
+</div>

@@ -1,11 +1,10 @@
 <h1>欲しいもの一覧だよ</h1>
 <div class="items">
     <% @items.each do |item| %>
-        <li>欲しいもの : <%= item.name %></li>
-            金額 : <%= item.price.to_s(:delimited) %>円
-            <%= item.buy_month.strftime("%Y年%m月%d日") %>に買うぜ！
-            <br>
-            <%= link_to "我慢する", '/items/' + item.id.to_s, method: :delete %> 
+        <li class="buys">欲しいもの : <%= item.name %></li>
+        <li>金額 : <%= item.price.to_s(:delimited) %>円</li>
+        <li><%= item.buy_month.strftime("%Y年%m月%d日") %>に買うぜ！</li>
+        <li><%= link_to "我慢する", '/items/' + item.id.to_s, method: :delete %></li>
     <% end %>
 </div>
 
@@ -16,10 +15,17 @@
 
 
 <h2>期間で検索する？</h2>
-<%= search_form_for @q, url: search_items_path do |f| %>
-    <%= f.date_field :buy_month_gteq,
-                        class: 'form-control'%>〜
-    <%= f.date_field :buy_month_lteq_end_of_day, 
-                        class: 'form-control' %>
-    <%= f.submit "検索" , class: "btn btn-primary"%>
-<% end %>
+<div class="input_search">
+    <%= search_form_for @q, url: search_items_path do |f| %>
+        <%= f.date_field :buy_month_gteq,
+                            class: 'form-control'%>〜
+        <%= f.date_field :buy_month_lteq_end_of_day, 
+                            class: 'form-control' %>
+        <%= f.submit "検索" , class: "btn btn-primary"%>
+    <% end %>
+</div>
+
+
+<div class="test">
+    <p>これは要素です。</p>
+</div>
