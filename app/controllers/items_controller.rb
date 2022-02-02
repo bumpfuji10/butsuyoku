@@ -7,8 +7,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
   end
-
-
+  
   def index
     @items = Item.all.order(buy_month: :asc)
     @ItemsAllSum = Item.all.sum(:price)

@@ -34,4 +34,4 @@ group :test do
   gem 'webdrivers'
 end
 
-gem 'tzino-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
