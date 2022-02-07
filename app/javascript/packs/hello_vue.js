@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     methods: {
       japanese: function () {
-        this.message = 'こんにちは！うんこが出そう'
+        this.message = 'こんにちは！'
       }
     },
     components: { App }
