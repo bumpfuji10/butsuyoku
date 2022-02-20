@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   get 'about' => 'items#about'
   post 'items' => 'items#create'
   delete 'items/:id' => 'items#destroy'
+  patch 'items/:id' => 'items#update'
   resources :items do
-    collection do 
+    collection do
       get 'search'
     end
   end

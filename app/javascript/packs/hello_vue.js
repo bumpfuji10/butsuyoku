@@ -3,5 +3,5 @@ import App from "../app.vue";
 
 document.addEventListener("DOMContentLoaded", () => {
   const app = createApp(App);
-  app.mount("#vue-app");
+  app.mount("#app");
 });

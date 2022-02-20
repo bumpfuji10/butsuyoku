@@ -4,16 +4,26 @@ class ItemsController < ApplicationController
   def about
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    redirect_to index_path
+  end
+
   def new
     @item = Item.new
   end
-  
+
   def index
     @items = Item.all.order(buy_month: :asc)
     @ItemsAllSum = Item.all.sum(:price)
   end
 
-  def create 
+  def create
     @item = Item.new(item_params)
     if @item.save
       flash[:success] = "欲しがりさんめ！"
@@ -23,7 +33,7 @@ class ItemsController < ApplicationController
       render 'new'
     end
   end
-  
+
     def destroy
       @item = Item.find(params[:id])
       @item.destroy
