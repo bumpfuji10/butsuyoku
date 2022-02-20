@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* mixins, variables, etc. */ 
+/* mixins, variables, etc. */
 $gray-medium-light: #eaeaea;
 
 @mixin box-sizing {
@@ -10,10 +10,10 @@ $gray-medium-light: #eaeaea;
     box-sizing: border-box;
 }
 
-/* 全体 */ 
+/* 全体 */
 
 body {
-    padding-top: 60px;
+    padding-top: 130px;
 }
 
 section {
@@ -31,7 +31,7 @@ textarea {
     }
 }
 
-/* typography */ 
+/* typography */
 
 h1, h2, h3, h4, h5, h6 {
     line-height: 1;
@@ -58,9 +58,9 @@ p {
     line-height: 1.7em;
 }
 
-/* header */ 
+/* header */
 
-#BUTSUYOKU {
+#BUTSUYOKU_logo{
     font-family: Arial Black;
     float: left;
     margin-right: 10px;
@@ -75,7 +75,12 @@ p {
     }
 }
 
-/* footer */ 
+.dentaku_logo{
+    text-align: left;
+    width: 10px;
+}
+
+/* footer */
 footer {
     margin-top: 45px;
     padding-top: 5px;
@@ -83,7 +88,7 @@ footer {
     color: #777;
 }
 
-/* new_forms */ 
+/* new_forms */
 
 input, textarea, select .uneditable-input {
     border: 1px solid #bbb;
@@ -96,7 +101,7 @@ input {
     height: auto !important;
 }
 
-/* index */ 
+/* index */
 .items {
     justify-content: center;
     text-align: center;
@@ -128,7 +133,7 @@ span {
     padding: 0;
 }
 
-/* search */ 
+/* search */
 .search {
     text-align: center;
     justify-content: center;

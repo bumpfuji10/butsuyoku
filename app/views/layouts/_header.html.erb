@@ -1,7 +1,12 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
-        <%= link_to "BUTSUYOKU", '/', id: "BUTSUYOKU", class: "BUTSUYOKU" %>
-        <nav>  
+        <li>
+            <%= link_to '/', id: "BUTSUYOKU_logo" do %>
+                <%= image_tag("dentaku.png", alt: "BUTSUYOKU_logo", width: "40px", id:"image-dentaku") %>
+                BUTSUYOKU
+            <% end %>
+        </li>
+        <nav>
             <ul class="nav navbar-nav navbar-right">
                 <li><%= link_to "BUTSUYOKU一覧", index_path %></li>
                 <li><%= link_to "BUTSUYOKUとは？", about_path %></li>

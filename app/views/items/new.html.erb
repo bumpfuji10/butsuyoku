@@ -2,7 +2,7 @@
     <div class="col-md-6 col-md-offset-3">
         <%= form_with(model: @item, local: true) do |f| %>
             <%= f.label :name, '欲しいもの' %>
-                <%= f.text_field :name %>     
+                <%= f.text_field :name %>
                 <%= f.label :price, '金額(半角で入れてね！)' %>
                 <%= f.text_field :price %>
                     <%= f.label :買うタイミング %>
@@ -10,14 +10,12 @@
                         use_month_numbers: true,
                         start_year: (Time.now.year),
                         end_year: 2030,
-                        date_separator: '/'} 
+                        date_separator: '/'}
                     %>
                 <%= f.submit "欲しい！", class: "btn btn-primary" %>
         <% end %>
     </div>
 </div>
 
-<div id="app">
-    <p>{{ message }}</p>
-    <button v-on:click="japanese">日本語表示</button>
-</div>
+<%= javascript_pack_tag 'hello_vue.js' %>
+<div id="vue-app"></div>

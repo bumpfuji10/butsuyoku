@@ -12,5 +12,6 @@ module Butsuyoku
       g.test_framework :rspec
     end
     config.load_defaults 6.1
+    config.time_zone = 'Tokyo'
   end
 end
