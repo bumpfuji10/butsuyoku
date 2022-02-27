@@ -5,6 +5,7 @@
         <li>欲しいもの : <%= item.name %></li>
         <li>金額 : <%= item.price.to_s(:delimited) %>円</li>
         <li>購入予定日：<%= item.buy_month.strftime("%Y年%m月%d日") %></li>
+        <li>買う理由：<%= item.reason %></li>
         <li><%= link_to "我慢する", '/items/' + item.id.to_s, method: :delete %></li>
         <li><%= link_to "編集する", edit_item_path(item.id) %></li>
     <% end %>
