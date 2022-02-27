@@ -1,4 +1,4 @@
-<h1>編集しよう！</h1>
+<h1>BUTSUYOKU編集</h1>
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <%= form_with(model: @item, local: true) do |f| %>
@@ -13,6 +13,10 @@
                         end_year: 2030,
                         date_separator: '/'}
                     %>
+
+                    <br>
+                    <br><%= f.label :reason, '買う理由' %>
+                    <%= f.text_field :reason %>
                 <%= f.submit "変更する！", class: "btn btn-primary" %>
         <% end %>
     </div>

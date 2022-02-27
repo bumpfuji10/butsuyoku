@@ -134,20 +134,6 @@ p {
     width: 100%;
 }
 
-#BUTSUYOKU_logo{
-    font-family: Arial Black;
-    float: left;
-    margin-right: 10px;
-    font-size: 1.7em;
-    color: #fff;
-    letter-spacing: -1px;
-    padding-top: 9px;
-    font-weight: bold;
-    &:hover {
-        color: #fff;
-        text-decoration: none;
-    }
-}
 
 .dentaku_logo{
     text-align: left;
@@ -162,6 +148,7 @@ footer {
     padding-top: 5px;
     border-top: 1px solid #eaeaea;
     color: #777;
+    text-align: center;
 }
 
 /* new_forms */
@@ -180,6 +167,17 @@ input {
 /*-----------
     index
 ------------*/
+.entire {
+    justify-content: center;
+    text-align: center;
+}
+
+th, td{
+    padding-left: 20px;
+    text-align: center;
+}
+
+
 .items {
     justify-content: center;
     text-align: center;
@@ -195,7 +193,6 @@ input {
 .sumprice {
     text-align: center;
     padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
 }
 
 span {
@@ -211,6 +208,15 @@ span {
     padding: 0;
 }
 
+/*----------
+    show
+-----------*/
+
+section {
+    text-align: center;
+}
+
+
 /* search */
 .search {
     text-align: center;
@@ -221,5 +227,3 @@ span {
         padding: 10px;
     }
 }
-
-

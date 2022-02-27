@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'items' => 'items#create'
   delete 'items/:id' => 'items#destroy'
   patch 'items/:id' => 'items#update'
+  get 'item/:id' => 'items#show'
   resources :items do
     collection do
       get 'search'

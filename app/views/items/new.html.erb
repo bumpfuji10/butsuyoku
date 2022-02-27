@@ -7,13 +7,13 @@
             <%= f.label :price, '金額(半角で入れてね！)' %>
             <%= f.text_field :price %>
 
-                <%= f.label '買うタイミング' %>
                 <%= f.date_select :buy_month, {
                     use_month_numbers: true,
                     start_year: (Time.now.year),
                     end_year: 2030,
                     date_separator: '/'}
                 %>
+                <%= f.label 'に購入' %>
 
             <br>
             <br><%= f.label :reason, '買う理由' %>
@@ -23,4 +23,5 @@
         <% end %>
     </div>
 </div>
+
 

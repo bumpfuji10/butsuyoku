@@ -4,14 +4,22 @@ class ItemsController < ApplicationController
   def about
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
+
+
   def edit
     @item = Item.find(params[:id])
   end
 
   def update
     @item = Item.find(params[:id])
-    @item.update(item_params)
-    redirect_to index_path
+    if @item.update(item_params)
+      redirect_to index_path
+    else
+      redirect_to "/"
+    end
   end
 
   def new

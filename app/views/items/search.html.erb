@@ -1,4 +1,4 @@
-<h1>期間検索結果だよ</h1>
+<h1>この期間のBUTSUYOKU合計金額は…</h1>
 <div class="search">
     <% @items.each do |item| %>
         <li>欲しいもの : <%= item.name %>
@@ -7,7 +7,7 @@
     <% end %>
 
 
-    <p>この期間のBUTSUYOKU合計金額は…<%= @ItemsAllSumOnSearch.to_s(:delimited) %>円だよ。</p>
+    <h2><%= @ItemsAllSumOnSearch.to_s(:delimited) %>円だよ。</h2>
     <% if @ItemsAllSumOnSearch.to_s(:delimited) == "0" %>
         <%= "節約中ですか？" %>
     <% elsif @ItemsAllSumOnSearch < 10000 %>
