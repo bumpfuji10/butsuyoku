@@ -1,9 +1,10 @@
 <h1>BUTSUYOKU一覧だよ</h1>
 <div class="items">
     <% @items.each do |item| %>
-        <li class="buys">欲しいもの : <%= item.name %></li>
+        <li class="buys">登録日：<%= item.created_at.strftime("%Y年%m月%d日") %></li>
+        <li>欲しいもの : <%= item.name %></li>
         <li>金額 : <%= item.price.to_s(:delimited) %>円</li>
-        <li><%= item.buy_month.strftime("%Y年%m月%d日") %>に購入</li>
+        <li>購入予定日：<%= item.buy_month.strftime("%Y年%m月%d日") %></li>
         <li><%= link_to "我慢する", '/items/' + item.id.to_s, method: :delete %></li>
         <li><%= link_to "編集する", edit_item_path(item.id) %></li>
     <% end %>

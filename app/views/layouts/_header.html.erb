@@ -1,15 +1,14 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="header">
     <div class="container">
-        <li>
-            <%= link_to '/', id: "BUTSUYOKU_logo" do %>
-                <%= image_tag("dentaku.png", alt: "BUTSUYOKU_logo", width: "40px", id:"image-dentaku") %>
-                BUTSUYOKU
+        <p class="header-logo">
+            <%= link_to "/" do %>
+                <%= image_tag("dentaku.png", alt: "BUTSUYOKU_logo", width: "40px", id:"image-dentaku") %>BUTSUYOKU<a href="https://qiita.com/bumpfuji10"></a>
             <% end %>
-        </li>
-        <nav>
-            <ul class="nav navbar-nav navbar-right">
-                <li><%= link_to "BUTSUYOKU一覧", index_path %></li>
-                <li><%= link_to "BUTSUYOKUとは？", about_path %></li>
+        </p>
+        <nav class="gnav-list">　
+            <ul class="gnav-list">
+                <li class="gnav-item"><a href="#index"><%= link_to "BUTSUYOKU一覧", index_path %></li>
+                <li class="gnav-item"><a href="#about"><%= link_to "BUTSUYOKUとは？", about_path %></li>
             </ul>
         </nav>
     </div>

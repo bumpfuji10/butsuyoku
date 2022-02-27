@@ -5,7 +5,7 @@
                 <%= f.text_field :name %>
                 <%= f.label :price, '金額(半角で入れてね！)' %>
                 <%= f.text_field :price %>
-                    <%= f.label :タイミング %>
+                    <%= f.label :買うタイミング %>
                     <%= f.date_select :buy_month, {
                         use_month_numbers: true,
                         start_year: (Time.now.year),
@@ -17,5 +17,3 @@
     </div>
 </div>
 
-<%= javascript_pack_tag 'hello_vue.js' %>
-<div id="app"></div>

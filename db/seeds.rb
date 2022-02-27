@@ -1,4 +1,10 @@
 Item.create!(name: '商品1',price: 3000,buy_month: "2022-4-30")
 Item.create!(name: '商品2',price: 4000,buy_month: "2023-5-30")
 Item.create!(name: '商品3',price: 6000,buy_month: "2023-2-23")
-
+Item.create!(name: '商品4',price: 4000,buy_month: "2023-5-30")
+Item.create!(name: '商品5',price: 6000,buy_month: "2023-2-23")
+Item.create!(name: '商品6',price: 4000,buy_month: "2023-5-30")
+Item.create!(name: '商品7',price: 63400,buy_month: "2023-2-23")
+Item.create!(name: '商品8',price: 4500,buy_month: "2024-5-30")
+Item.create!(name: '商品9',price: 6500,buy_month: "2026-6-11")
+Item.create!(name: '商品10',price: 6555,buy_month: "2023-3-21")

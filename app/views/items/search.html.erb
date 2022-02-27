@@ -3,21 +3,21 @@
     <% @items.each do |item| %>
         <li>欲しいもの : <%= item.name %>
         <br>金額　: <%= item.price.to_s(:delimited) %>円
-        <br><%= item.buy_month.strftime("%Y年%m月%d日") %>に買うぜ！
+        <br><%= item.buy_month.strftime("%Y年%m月%d日") %>に購入
     <% end %>
 
 
-    <p>この期間に買うものの金額合計は…<%= @ItemsAllSumOnSearch.to_s(:delimited) %>円だよ。</p>
+    <p>この期間のBUTSUYOKU合計金額は…<%= @ItemsAllSumOnSearch.to_s(:delimited) %>円だよ。</p>
     <% if @ItemsAllSumOnSearch.to_s(:delimited) == "0" %>
-        <%= "もしかして節約してんの？" %>
+        <%= "節約中ですか？" %>
     <% elsif @ItemsAllSumOnSearch < 10000 %>
-        <%= "貧困層は大変だねぇ（笑）" %>
+        <%= "その調子です！" %>
     <% elsif @ItemsAllSumOnSearch < 20000 %>
-        <%= "今月の家計簿ちゃんと見た？" %>
+        <%= "BUTSUYOKUを整理しましょう" %>
     <% elsif @ItemsAllSumOnSearch < 30000 %>
-        <br><%= "そういえば君の財布が「もう限界」って相談しにきたけど、大丈夫？" %>
+        <br><%= "節約しましょう" %>
     <% else %>
-        <%= "貴様に買えるのか？" %>
+        <%= "貯金はしましたか？" %>
     <% end %>
     <br><%= link_to '戻る', index_path %>
 </div>
