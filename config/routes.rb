@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'item/:id' => 'items#show'
 
   get '/signup' => 'users#new'
+  get '/users/:id' => 'users#show'
+  resources :users
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
