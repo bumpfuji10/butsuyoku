@@ -10,7 +10,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    redirect_to users_show_path(@user.id)
+    if @user.save
+      flash[:success] = "BUTUSYOKUへようこそ"
+      redirect_to @user
+    else
+      render 'new'
+    end
   end
 
   private
