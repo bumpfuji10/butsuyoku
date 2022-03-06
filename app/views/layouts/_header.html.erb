@@ -8,11 +8,12 @@
         <nav class="gnav-list">　
             <ul class="gnav-list">
                 <li class="gnav-item"><a href="#about"><%= link_to "BUTSUYOKUとは？", about_path %></li>
-                <li class="gnav-item"><a href="#signup"><%= link_to "サインアップ", signup_path %></li>
                 <% if logged_in? %>
                     <li class="gnav-item"><a href="#index"><%= link_to "BUTSUYOKU一覧", index_path %></li>
-                    <li class="gnav-item"><a href="logout"><%= link_to "ログアウト", logout_path, method: :delete %>
+                    <li class="gnav-item"><a href="#logout"><%= link_to "ログアウト", logout_path, method: :delete %>
+                    <li class="gnav-item"><a href="#MyPage"><%= link_to "マイページ", current_user %>
                 <% else %>
+                    <li class="gnav-item"><a href="#signup"><%= link_to "サインアップ", signup_path %></li>
                     <li class="gnav-item"><a href="#login"><%= link_to "ログイン", login_path %></li>
                 <% end %>
             </ul>

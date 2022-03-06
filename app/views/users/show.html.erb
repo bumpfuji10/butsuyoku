@@ -1,2 +1,5 @@
-<h1>ユーザー詳細画面</h1>
-<p><%= @user.name %></p>
+<h1>username:<%= current_user.name %></h1>
+<h2>useremail:<%= current_user.email %><h2>
+<h2>currentBUTSUYOKU:<%= @ItemsAllSum.to_s(:delimited) %>円</h2>
+<h2>created at:<%= current_user.created_at.strftime("%Y年%m月%d日") %></h2>
+<h2><%= link_to "編集", edit_user_path, class:"btn btn-default" %></h2>

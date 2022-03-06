@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   post 'items' => 'items#create'
   delete 'items/:id' => 'items#destroy'
   patch 'items/:id' => 'items#update'
-  get 'item/:id' => 'items#show'
 
   get '/signup' => 'users#new'
   get '/users/:id' => 'users#show'
+  patch 'users/:id' => 'users#update'
   resources :users
 
   get '/login' => 'sessions#new'

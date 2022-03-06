@@ -2,6 +2,20 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @ItemsAllSum = Item.all.sum(:price)
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to current_user  ##あとで修正
+    else
+      redirect_to "/" #後で修正
+    end
   end
 
   def new

@@ -1,8 +1,7 @@
 <h1>BUTSUYOKU一覧</h1>
-    <div class="entire">
     <table>
-        <thead>
-            <tr>
+        <thead class="index">
+            <tr class="index">
                 <th class="item_name">欲しいもの</th>
                 <th class="item_price">金額</th>
                 <th class="item_buy_month">購入予定日</th>
@@ -11,23 +10,21 @@
                 <th></th>
             <tr>
         </thead>
-        <tbody>
+        <tbody class="index">
             <% @items.each do |item| %>
             <tr>
                 <td class="item_name"><%= item.name %></td>
                 <td class="item_price"><%= item.price.to_s(:delimited) %>円</td>
                 <td class="item_buy_month"><%= item.buy_month.strftime("%Y年%m月%d日") %></td>
                 <td class="item_reason"><%= item.reason %></td>
-                <td class="item_gaman"><%= button_to "我慢する", item, :method => :delete, class: "button"%></td>
-                <td class="item_edit"><%= button_to "編集する", edit_item_path(item.id), method: :get %></td>
-                <td class="item_show"><%= button_to "詳細", item, method: :get %></td>
+                <td class="item_gaman"><div class="gaman_buttton"><%= button_to "我慢する", item, :method => :delete, class: "btn btn-default"%></div></td>
+                <td class="item_edit"><div class="edit_button"><%= button_to "編集する", edit_item_path(item.id), method: :get, class:"btn btn-default" %></div></td>
             </tr>
             <% end %>
         </tbody>
     </table>
-</div>
 <div class="sumprice">
-    <p>君のBUTSUYOKU合計金額は...<span><%= @ItemsAllSum.to_s(:delimited) %></span>円だよ。</p>
+    <p>あなたのBUTSUYOKU合計金額は...<span><%= @ItemsAllSum.to_s(:delimited) %>円</span>です。</p>
     <p><%= link_to "ホームに戻る", '/' %><p>
 </div>
 
@@ -38,20 +35,7 @@
                             class: 'form-control'%>〜
         <%= f.date_field :buy_month_lteq_end_of_day,
                             class: 'form-control' %>
-        <%= f.submit "検索" , class: "btn btn-primary"%>
+        <%= f.submit "検索" , class: "btn btn-default"%>
     <% end %>
 </div>
-
-    <!----<div class="items">
-        <% @items.each do |item| %>
-            <li class="buys">登録日：<%= item.created_at.strftime("%Y年%m月%d日") %></li>
-            <li>欲しいもの : <%= item.name %></li>
-            <li>金額 : <%= item.price.to_s(:delimited) %>円</li>
-            <li>購入予定日：<%= item.buy_month.strftime("%Y年%m月%d日") %></li>
-            <li>買う理由：<%= item.reason %></li>
-            <li><%= link_to "我慢する", '/items/' + item.id.to_s, method: :delete %></li>
-            <li><%= link_to "編集する", edit_item_path(item.id) %></li>
-        <% end %>
-    </div>---->
-
 </body>

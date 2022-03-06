@@ -14,6 +14,7 @@ $gray-medium-light: #eaeaea;
 
 body {
     padding-top: 50px;
+    background-color: lightyellow;
 }
 
 section {
@@ -74,7 +75,7 @@ p {
     top: 0;
     z-index: 1;
     width: 100%;
-    background-color:black;
+    background-color: yellowgreen;
     box-shadow: 0 5px 10px -6px rgba(0,0,0,.1);
 }
 
@@ -167,27 +168,30 @@ input {
 /*-----------
     index
 ------------*/
-.entire {
-    justify-content: center;
-    text-align: center;
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
 }
 
-th, td{
-    padding-left: 20px;
-    text-align: center;
+table tr {
+    border-bottom: solid 1px #eee;
+    border-color: seagreen;
 }
 
+table tr:hover {
+    background-color: #d4f0fd;
+}
 
-.items {
-    justify-content: center;
+table th, table td {
     text-align: center;
-    list-style: none;
-    .buys {
-        border-top: 1px solid #e8e8e8;
-    }
-    li {
-        padding: 5px;
-    }
+    width: 25%;
+    padding: 15px 0s;
+}
+
+.edit_button {
+    padding: 20px;
 }
 
 .sumprice {
@@ -217,13 +221,7 @@ section {
 }
 
 
-/* search */
-.search {
-    text-align: center;
-    justify-content: center;
-    li {
-        border-top:1px solid #e8e8e8;
-        list-style: none;
-        padding: 10px;
-    }
-}
+/*-----------
+    search
+ ---------- */
+
