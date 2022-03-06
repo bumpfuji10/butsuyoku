@@ -22,62 +22,17 @@
     </tbody>
 </table>
 
-
-<!------------
-<h1>この期間のBUTSUYOKU合計金額は…</h1>
-<div class="search">
-    <% @items.each do |item| %>
-        <li>欲しいもの : <%= item.name %>
-        <br>金額　: <%= item.price.to_s(:delimited) %>円
-        <br><%= item.buy_month.strftime("%Y年%m月%d日") %>に購入
-    <% end %>
-
-
-    <h2><%= @ItemsAllSumOnSearch.to_s(:delimited) %>円だよ。</h2>
+    <h2>合計金額は<%= @ItemsAllSumOnSearch.to_s(:delimited) %>円だよ。</h2>
     <% if @ItemsAllSumOnSearch.to_s(:delimited) == "0" %>
-        <%= "節約中ですか？" %>
+        <h2><%= "節約中ですか？" %></h2>
     <% elsif @ItemsAllSumOnSearch < 10000 %>
-        <%= "その調子です！" %>
+        <h2><%= "その調子です！" %></h2>
     <% elsif @ItemsAllSumOnSearch < 20000 %>
-        <%= "BUTSUYOKUを整理しましょう" %>
+        <h2><%= "BUTSUYOKUを整理しましょう" %><h2>
     <% elsif @ItemsAllSumOnSearch < 30000 %>
-        <br><%= "節約しましょう" %>
+        <h2><%= "節約しましょう" %></h2>
     <% else %>
-        <%= "貯金はしましたか？" %>
+        <h2><%= "貯金はしましたか？" %></h2>
     <% end %>
-    <br><%= link_to '戻る', index_path %>
+    <h2><%= link_to '戻る', index_path %></h2>
 </div>
------------->
-
-<!-----------------
-    <table>
-        <thead>
-            <tr>
-                <th class="item_name">欲しいもの</th>
-                <th class="item_price">金額</th>
-                <th class="item_buy_month">購入予定日</th>
-                <th class="item_reason">購入理由</th>
-                <th></th>
-                <th></th>
-            <tr>
-        </thead>
-        <tbody>
-            <% @items.each do |item| %>
-            <tr>
-                <td class="item_name"><%= item.name %></td>
-                <td class="item_price"><%= item.price.to_s(:delimited) %>円</td>
-                <td class="item_buy_month"><%= item.buy_month.strftime("%Y年%m月%d日") %></td>
-                <td class="item_reason"><%= item.reason %></td>
-                <td class="item_gaman"><%= button_to "我慢する", item, :method => :delete, class: "button"%></td>
-                <td class="item_edit"><%= button_to "編集する", edit_item_path(item.id), method: :get %></td>
-            </tr>
-            <% end %>
-        </tbody>
-    </table>
-
-
-
-
-
-
-------------------->

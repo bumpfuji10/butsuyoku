@@ -108,6 +108,18 @@ p {
     margin-right: 20px;
 }
 
+.menu {
+    color: white;
+    position: relative;
+    font-size: 13px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 0;
+    transition: .3s;
+    letter-spacing: .05em;
+    color:white;
+}
+
 .gnav-item a {
     position: relative;
     font-size: 13px;
@@ -177,7 +189,7 @@ table {
 
 table tr {
     border-bottom: solid 1px #eee;
-    border-color: seagreen;
+    border-color: yellowgreen;
 }
 
 table tr:hover {
