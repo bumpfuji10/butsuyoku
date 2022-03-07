@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
   before_action :search
 
+  def home
+  end
+
   def about
   end
 
