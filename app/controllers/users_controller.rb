@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @ItemsAllSum = Item.all.sum(:price)
+    @ItemsAllSum = Item.where(id: :user_id).all.sum(:price)
   end
 
   def edit
@@ -30,6 +30,7 @@ class UsersController < ApplicationController
       flash[:success] = "BUTSUYOKUへようこそ"
       redirect_to @user
     else
+      flash[:danger] = "サインアップに失敗しました"
       render 'new'
     end
   end
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :item_id)
   end
 
   def logged_in_user

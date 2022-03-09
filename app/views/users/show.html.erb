@@ -1,6 +1,6 @@
 <h1>UserName：<%= current_user.name %></h1>
 <h2>UserEmail：<%= current_user.email %><h2>
-<h2>CurrentBUTSUYOKU：<%= @ItemsAllSum.to_s(:delimited) %>円</h2>
+<h2>CurrentBUTSUYOKU：<%= @ItemsAllSum %>円</h2>
 <h2>Created at：<%= current_user.created_at.strftime("%Y年%m月%d日") %></h2>
 <h2><%= link_to "登録内容を編集", edit_user_path, class:"btn btn-default" %></h2>
-<h2><%= link_to "BUTSUYOKU登録", item_path, class:"btn btn-default" %></h2>
+<h2><%= link_to "BUTSUYOKU登録!", "/items/new", class:"btn btn-default" %></h2>
