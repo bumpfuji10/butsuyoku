@@ -22,6 +22,9 @@
     </tbody>
 </table>
 
+<% if @ItemsAllSumOnSearch.nil? %>
+<%= puts 0 %>
+<% else %>
     <h2>合計金額は<%= @ItemsAllSumOnSearch.to_s(:delimited) %>円だよ。</h2>
     <% if @ItemsAllSumOnSearch.to_s(:delimited) == "0" %>
         <h2><%= "節約中ですか？" %></h2>
@@ -35,4 +38,5 @@
         <h2><%= "貯金はしましたか？" %></h2>
     <% end %>
     <h2><%= link_to '戻る', index_path %></h2>
+<% end %>
 
