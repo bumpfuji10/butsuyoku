@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @ItemsAllSum = Item.where(id: :user_id).all.sum(:price)
+    @ItemsAllSum = current_user.items.all.sum(:price)
   end
 
   def edit
@@ -13,9 +13,9 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to current_user  ##あとで修正
+      redirect_to current_user
     else
-      redirect_to "/" #後で修正
+      redirect_to "/"
     end
   end
 
@@ -30,7 +30,6 @@ class UsersController < ApplicationController
       flash[:success] = "BUTSUYOKUへようこそ"
       redirect_to @user
     else
-      flash[:danger] = "サインアップに失敗しました"
       render 'new'
     end
   end
