@@ -22,21 +22,17 @@
     </tbody>
 </table>
 
-<% if @ItemsAllSumOnSearch.nil? %>
-<%= puts 0 %>
-<% else %>
-    <h2>合計金額は<%= @ItemsAllSumOnSearch.to_s(:delimited) %>円だよ。</h2>
-    <% if @ItemsAllSumOnSearch.to_s(:delimited) == "0" %>
+    <h2>合計金額は<%= @ItemsAllSumSearch.to_s(:delimited) %>円だよ。</h2>
+    <% if @ItemsAllSumSearch.to_s(:delimited) == "0" %>
         <h2><%= "節約中ですか？" %></h2>
-    <% elsif @ItemsAllSumOnSearch < 10000 %>
+    <% elsif @ItemsAllSumSearch < 10000 %>
         <h2><%= "その調子です！" %></h2>
-    <% elsif @ItemsAllSumOnSearch < 20000 %>
+    <% elsif @ItemsAllSumSearch < 20000 %>
         <h2><%= "BUTSUYOKUを整理しましょう" %><h2>
-    <% elsif @ItemsAllSumOnSearch < 30000 %>
+    <% elsif @ItemsAllSumSearch < 30000 %>
         <h2><%= "節約しましょう" %></h2>
     <% else %>
         <h2><%= "貯金はしましたか？" %></h2>
     <% end %>
     <h2><%= link_to '戻る', index_path %></h2>
-<% end %>
 

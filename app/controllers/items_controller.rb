@@ -14,10 +14,9 @@ class ItemsController < ApplicationController
   def create
     @item = current_user.items.build(item_params)
     if @item.save
-      flash[:success] = "欲しがりさんめ！"
+      flash[:success] = '登録しました'
       redirect_to index_path
     else
-      flash[:danger] = "何ゆーてますの？"
       render 'new'
     end
   end
@@ -43,7 +42,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
-    flash[:danger] = "削除しました"
+    flash[:danger] = '削除しました'
     redirect_to index_path
   end
 

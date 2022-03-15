@@ -13,9 +13,11 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
+      flash[:success] = "編集しました"
       redirect_to current_user
     else
-      redirect_to "/"
+      flash[:danger] = "編集に失敗しました"
+      redirect_to "/users/#{current_user.id}/edit"
     end
   end
 

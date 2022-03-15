@@ -5,3 +5,7 @@ ja:
         name: 名前
         email: メールアドレス
         password: パスワード
+      item:
+        name: 欲しいもの
+        price: 金額
+        reason: 買う理由
