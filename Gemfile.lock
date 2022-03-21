@@ -85,6 +85,7 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    device (0.0.0)
     diff-lcs (1.5.0)
     erubi (1.10.0)
     execjs (2.8.1)
@@ -250,6 +251,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capybara (>= 3.26)
+  device
   factory_bot_rails
   foreman
   jbuilder (~> 2.7)

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  root to: 'items#home'
   get 'users/new'
   get 'sessions/new'
   get '/' => 'items#home'
-  get 'imtes/new' => 'items/new'
+  get 'items/new' => 'items/new'
   get '/index' => 'items#index'
   get 'about' => 'items#about'
   post 'items' => 'items#create'

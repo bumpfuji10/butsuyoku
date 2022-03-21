@@ -3,7 +3,7 @@
 <h2>記録することができるアプリケーションです。</h2>
 <h2>自分のBUTSUYOKUを可視化してみよう！</h2>
 <% if current_user %>
-  <h2><%= link_to "BUTSUYOKU登録！", '/items/new', class:"btn btn-primary" %></h2>
+  <h2><%= link_to "BUTSUYOKU登録！", new_item_path, class:"btn btn-primary" %></h2>
 <% else %>
   <h2><%= link_to "まずはアカウント登録！", signup_path, class:"btn btn-primary", method: :get %></h2>
 <% end %>
