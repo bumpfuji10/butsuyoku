@@ -3,22 +3,22 @@
         <%= form_with(model: @item, local: true) do |f| %>
             <%= render 'shared/item/error_messages' %>
 
-            <%= f.label :name, '欲しいもの' %>
+            <%= f.label :name, "欲しいもの" %>
             <%= f.text_field :name %>
 
-            <%= f.label :price, '金額(半角で入れてね！)' %>
+            <%= f.label :price, "金額(半角で入れてね！)" %>
             <%= f.text_field :price %>
 
-                <%= f.date_select :buy_month, {
-                    use_month_numbers: true,
-                    start_year: (Time.now.year),
-                    end_year: 2030,
-                    date_separator: '/'}
-                %>
-                <%= f.label 'に購入' %>
+            <%= f.label :buy_month, "買うタイミング" %>
+            <%= f.date_select :buy_month, {
+                use_month_numbers: true,
+                start_year: (Time.now.year),
+                end_year: 2030,
+                date_separator: '/'}
+            %>
 
             <br>
-            <br><%= f.label :reason, '買う理由' %>
+            <br><%= f.label :reason, "買う理由" %>
             <%= f.text_field :reason %>
 
             <%= f.submit "欲しい！", class: "btn btn-primary" %>
