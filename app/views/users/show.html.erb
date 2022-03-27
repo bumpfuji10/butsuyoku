@@ -1,6 +1,10 @@
 <h1>ユーザー名：<%= current_user.name %></h1>
 <h2>メールアドレス：<%= current_user.email %><h2>
-<h2>現在のBUTSUYOKU合計：<%= @ItemsAllSum %>円</h2>
+<% if @ItemsAllSum = 0 %>
+  <h2>現在のBUTSUYOKU合計：0円</h2>
+<% else %>
+  <h2>現在のBUTSUYOKU合計：<%= @ItemsAllSum %>円</h2>
+<% end %>
 <h2>登録日：<%= current_user.created_at.strftime("%Y年%m月%d日") %></h2>
 <h2><%= link_to "登録内容を編集", edit_user_path, class:"btn btn-default" %></h2>
 <h2><%= link_to "BUTSUYOKU登録!", "/items/new", class:"btn btn-default" %></h2>

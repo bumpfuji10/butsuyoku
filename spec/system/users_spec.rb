@@ -66,10 +66,15 @@ RSpec.describe "Users", type: :system do
 
     describe "#show" do
 
-      it "ユーザー詳細画面に遷移できること" do
+      it "ユーザー詳細画面に遷移され、正しい値が描画されていること" do
         click_on("Account")
         click_on("My page")
-        expect(current_path).to eq "/users/#{@user.id}"
+        aggregate_failures do
+          expect(current_path).to eq "/users/#{@user.id}"
+          expect(page).to have_content @user.name
+          expect(page).to have_content @user.email
+          expect(page).to have_content @user.created_at.strftime("%Y年%m月%d日")
+        end
       end
 
     end
@@ -126,7 +131,6 @@ RSpec.describe "Users", type: :system do
     describe "#show" do
 
       it "ログインしていない状態ではユーザー詳細画面へ遷移できないこと" do
-        visit root_path
         visit "/users/2"
         # 実際のidで検証
         expect(current_path).to eq login_path
