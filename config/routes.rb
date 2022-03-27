@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'about' => 'items#about'
   post 'items' => 'items#create'
   delete 'items/:id' => 'items#destroy'
+  get 'items/:id/edit' => 'items#edit'
   patch 'items/:id' => 'items#update'
 
   get '/signup' => 'users#new'

@@ -8,7 +8,11 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    if current_user
+      @item = Item.new
+    else redirect_to login_path
+      flash[:danger] = "ログインしてください"
+    end
   end
 
   def create
@@ -22,27 +26,39 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.where(user_id: current_user.id).order(buy_month: :asc)
-    @ItemsAllSum = @items.all.sum(:price)
+    if current_user
+      @items = Item.where(user_id: current_user.id).order(buy_month: :asc)
+      @ItemsAllSum = @items.all.sum(:price)
+    else
+      redirect_to login_path
+      flash[:danger] = "ログインしてください"
+    end
   end
 
   def edit
-    @item = Item.find(params[:id])
+    if current_user
+      @item = Item.find(params[:id])
+    else
+      redirect_to login_path
+      flash[:danger] = "ログインしてください"
+    end
   end
 
   def update
     @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to index_path
+      flash[:success] = "編集しました"
     else
-      redirect_to "/"
+      redirect_to "/items/#{@item.id}/edit"
+      flash[:damger] = "編集に失敗しました"
     end
   end
 
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
-    flash[:danger] = '削除しました'
+    flash[:danger] = "ナイスです！"
     redirect_to index_path
   end
 

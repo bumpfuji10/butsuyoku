@@ -3,11 +3,18 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @ItemsAllSum = current_user.items.all.sum(:price)
+    if !current_user
+      redirect_to login_path
+      flash[:danger] = "ログインしてください"
+    end
   end
 
   def edit
     @user = User.find(params[:id])
+    if !current_user
+      redirect_to login_path
+      flash[:danger] = "ログインしてください"
+    end
   end
 
   def update
@@ -45,7 +52,7 @@ class UsersController < ApplicationController
   def logged_in_user
     unless logged_in?
       flash[:danger] = "ログインしてください"
-      redirect_to login_urls
+      redirect_to login_url
     end
   end
 end
