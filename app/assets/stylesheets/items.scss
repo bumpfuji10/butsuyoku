@@ -202,17 +202,26 @@ input {
 /*-----------
     about
 ------------*/
-
-.kodawari {
-    list-style: none;
-    color: gray;
-    font-size: 1.2em;
-    letter-spacing: -1px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: normal;
-    color: #777;
+details {
+    padding: .5em .5em 0;
 }
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+    text-align: center;
+}
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+}
+
 
 /*-----------
     index

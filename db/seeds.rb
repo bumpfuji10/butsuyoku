@@ -8,4 +8,4 @@ Item.create!(name: '商品7',price: 63400,buy_month: "2023-2-23", reason: "HOGE�
 Item.create!(name: '商品8',price: 4500,buy_month: "2024-5-30", reason: "HOGEだから", user_id: 8)
 Item.create!(name: '商品9',price: 6500,buy_month: "2026-6-11", reason: "HOGEだから", user_id: 9)
 Item.create!(name: '商品10',price: 6555,buy_month: "2023-3-21", reason: "HOGEだから", user_id: 10)
-Item.create!(name: '商品11',price: 23945,buy_month: "2023-6-21", reason: "HOGEだから", user_id: 11)
+Item.create!(name: '商品11',price: 23945,buy_month: "2023-6-21", reason: "HOGEだから", user_id: 1)

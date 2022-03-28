@@ -7,6 +7,8 @@ class UsersController < ApplicationController
         flash[:danger] = "ログインしてください"
     else
       @user = User.find(params[:id])
+      @items = Item.where(user_id: current_user.id).order(buy_month: :asc)
+      @ItemsAllSum = @items.all.sum(:price)
     end
   end
 
