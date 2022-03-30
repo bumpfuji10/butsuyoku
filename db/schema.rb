@@ -30,10 +30,7 @@ ActiveRecord::Schema.define(version: 2022_03_09_031758) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.string "remember_digest"
-    t.integer "item_id"
-    t.index ["item_id"], name: "index_users_on_item_id"
   end
 
   add_foreign_key "items", "users"
-  add_foreign_key "users", "items"
 end
