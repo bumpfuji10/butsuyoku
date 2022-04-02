@@ -64,8 +64,8 @@ class ItemsController < ApplicationController
 
   def search
     if logged_in?
-      @q = current_user.items.ransack(params[:id])
-      @items = @q.result(distinct: true).order(buy_month: :desc)
+      @q = current_user.items.ransack(params[:q])
+      @items = @q.result(distinct: true).order(buy_month: :asc)
       @ItemsAllSumSearch = @items.all.sum(:price)
     end
   end

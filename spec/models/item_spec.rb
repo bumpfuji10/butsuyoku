@@ -6,9 +6,9 @@ RSpec.describe Item, type: :model do
     @item = FactoryBot.create(:item)
   end
 
-  it "Itemモデルの有効なファクトリを持っているか" do
-    expect(FactoryBot.build(:user)).to be_valid
-  end
+  #it "Itemモデルの有効なファクトリを持っているか" do
+    #expect(FactoryBot.build(:item)).to be_valid
+  #end
 
   it "名前、金額、買うタイミング、理由があれば有効" do
     expect(@item).to be_valid
@@ -38,5 +38,6 @@ RSpec.describe Item, type: :model do
     @item.valid?
     expect(@item).to be_invalid
   end
+
 end
 

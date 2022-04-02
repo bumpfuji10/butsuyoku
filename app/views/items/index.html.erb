@@ -34,10 +34,10 @@
 <div class="input_search">
     <%= search_form_for @q, url: search_items_path do |f| %>
         <%= f.date_field :buy_month_gteq,
-                            class: 'form-control'%>〜
+                            class: 'form-control' %>〜
         <%= f.date_field :buy_month_lteq_end_of_day,
                             class: 'form-control' %>
-        <%= f.submit "検索" , class: "btn btn-primary"%>
+        <%= f.submit "検索" , class: "btn btn-primary" %>
     <% end %>
 </div>
 </body>

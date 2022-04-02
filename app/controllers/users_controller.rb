@@ -3,8 +3,8 @@ class UsersController < ApplicationController
 
   def show
     if !current_user
-        redirect_to login_path
-        flash[:danger] = "ログインしてください"
+      redirect_to login_path
+      flash[:danger] = "ログインしてください"
     else
       @user = User.find(params[:id])
       @items = Item.where(user_id: current_user.id).order(buy_month: :asc)
