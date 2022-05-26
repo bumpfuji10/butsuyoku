@@ -33,6 +33,7 @@
 <h2>期間で検索することもできるよ</h2>
 <div class="input_search">
     <%= search_form_for @q, url: search_items_path do |f| %>
+        <!---gt...より大きい。 eq...等価。 lt...未満。----->
         <%= f.date_field :buy_month_gteq,
                             class: 'form-control' %>〜
         <%= f.date_field :buy_month_lteq_end_of_day,
