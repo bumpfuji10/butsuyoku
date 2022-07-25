@@ -2,6 +2,8 @@
 
 module Types
   class ItemType < Types::BaseObject
+    description '買いたいもの一覧'
+
     field :id, ID, null: false
     field :name, String
     field :price, Integer
