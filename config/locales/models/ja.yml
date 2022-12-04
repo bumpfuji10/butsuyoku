@@ -1,7 +1,4 @@
 ja:
-  time:
-    formats:
-      defaults: "%Y/%m/%d %H:%M:%S"
   activerecord:
     attributes:
       user:
