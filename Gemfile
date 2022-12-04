@@ -16,6 +16,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'ransack'
 gem 'foreman'
 gem 'rails-i18n'
+gem 'graphql'
 
 
 group :development, :test do
@@ -32,6 +33,7 @@ group :development do
   # gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
   gem 'spring'
+  gem 'graphiql-rails'
 end
 
 group :test do
