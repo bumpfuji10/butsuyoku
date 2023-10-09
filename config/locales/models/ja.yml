@@ -5,6 +5,7 @@ ja:
         name: 名前
         email: メールアドレス
         password: パスワード
+        password_confirmation: パスワード確認
       item:
         name: 欲しいもの
         price: 金額

@@ -233,6 +233,18 @@ table {
     width: 100%;
 }
 
+.table_container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+table thead th {
+    position: sticky;
+    top: 90px;
+    background-color: white;
+    z-index: 2;
+}
+
 table tr {
     border-bottom: solid 1px #eee;
     border-color: yellowgreen;
