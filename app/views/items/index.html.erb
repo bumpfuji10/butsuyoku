@@ -1,5 +1,6 @@
 <%= provide(:title, "BUTSUYOKU一覧") %>
 <h1>My BUTSUYOKU's</h1>
+<div class="table-container">
     <table>
         <thead class="index">
             <tr class="index">
@@ -24,6 +25,7 @@
             <% end %>
         </tbody>
     </table>
+<div>
 
 <div class="sumprice">
     <p>あなたのBUTSUYOKU合計金額は...<span><%= @ItemsAllSum.to_s(:delimited) %>円</span>です。</p>
